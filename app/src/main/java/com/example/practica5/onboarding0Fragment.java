@@ -2,8 +2,6 @@ package com.example.practica5;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -13,20 +11,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class Onboarding1Fragment extends Fragment {
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link onboarding0Fragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class onboarding0Fragment extends Fragment {
 
     Button botonSiguiente;
     Button skip;
+
     NavController navController;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_onboarding1, container, false);
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_onboarding0, container, false);
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
@@ -34,7 +39,7 @@ public class Onboarding1Fragment extends Fragment {
         botonSiguiente = view.findViewById(R.id.botonSiguiente);
         skip = view.findViewById(R.id.botonSkip);
 
-        botonSiguiente.setOnClickListener(view1 -> navController.navigate(R.id.action_onboarding1Fragment_to_onboarding2Fragment));
-        skip.setOnClickListener(view1 -> navController.navigate(R.id.action_onboarding1Fragment_to_homeFragment));
+        botonSiguiente.setOnClickListener(view1 -> navController.navigate(R.id.action_onboarding0Fragment_to_onboarding1Fragment));
+        skip.setOnClickListener(view1 -> navController.navigate(R.id.action_onboarding0Fragment_to_homeFragment));
     }
 }
